@@ -1,1 +1,1 @@
-# Some algorithms' functions by Pavel Zamyatin
+# My implementation of some algorithms' functions
