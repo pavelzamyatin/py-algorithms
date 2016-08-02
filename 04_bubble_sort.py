@@ -1,6 +1,6 @@
 import random, time
 
-unsorted_list = [random.randrange(0,99999) for i in range(0,99999)]
+unsorted_list = [random.randrange(0,9999) for i in range(0,9999)]
 random.shuffle(unsorted_list)
 
 print('Unsorted list = ', unsorted_list)
