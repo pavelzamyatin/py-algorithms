@@ -50,5 +50,6 @@ def find_amicable_numbers(lst):
 result, time = find_amicable_numbers(LIST)
 
 print('-------')
+print('RANGE FROM 1 TO', len(LIST))
 print('RESULT:', result)
 print('TIME:', round(time, 5), 'sec')
