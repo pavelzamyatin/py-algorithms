@@ -1,4 +1,4 @@
-import random, time, math
+import random, time
 
 LST = [i for i in range(1,2000)]
 
@@ -21,7 +21,7 @@ def find_divs_for_num(num):
 
 	lst = []
 
-	for i in range(1, int(math.sqrt(num))):
+	for i in range(1, num):
 		if num%i == 0:
 			lst.append(i)
 
