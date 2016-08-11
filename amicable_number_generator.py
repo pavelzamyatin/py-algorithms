@@ -1,6 +1,6 @@
-import random, time
+import random, time, math
 
-LST = [i for i in range(1,4000)]
+LST = [i for i in range(1,10000)]
 
 def decorator_time(func):
     """This function adds time value of execution of original sort
@@ -19,7 +19,23 @@ def decorator_time(func):
 def find_divs_for_num(num):
     """Function can find all divisors for number"""
 
-    return [i for i in range(1, int(num/2)+1) if num%i == 0]
+    if num%2 == 0:
+
+        lst = []
+        for i in range(1, int(num / 2) + 1):
+            if num%i == 0:
+                lst.append(i)
+
+        return lst
+
+    else:
+
+        lst = []
+        for i in range(1, int(math.sqrt(num)), +2):
+            if num%i == 0:
+                lst.append(i)
+
+        return lst
 
 @decorator_time
 def find_amicable_numbers(lst):
@@ -27,8 +43,8 @@ def find_amicable_numbers(lst):
     num_div_dict = {num:find_divs_for_num(num) for num in LST}
     amicable_list = []
 
-    for key, value in num_div_dict.items():
-        print(key, ':' ,value)    
+    # for key, value in num_div_dict.items():
+    #     print(key, ':' ,value)    
 
     for num in lst:
         for key, value in num_div_dict.items():
