@@ -14,7 +14,7 @@ class LinkedList():
             previous_node = self.firstNode
 
             while True:
-                if previous_node.getNext() == None:
+                if previous_node.getNext() is None:
                     newNode = Node(value)
                     previous_node.setNext(newNode)
                     break
@@ -22,7 +22,30 @@ class LinkedList():
                 previous_node = previous_node.getNext()
             
     def pop(self):
-        pass
+        
+        if self.firstNode is None:
+            raise IndexError('Out of range')
+
+        elif self.firstNode.getNext() is None:
+
+            lastNode = self.firstNode
+            self.firstNode = None
+
+            return lastNode.getValue()
+
+        else:
+            lastNode = self.firstNode
+
+            while True:
+                
+                if lastNode.getNext() is None:
+                    currentNode.setNext(None)
+                    break
+
+                currentNode = lastNode
+                lastNode = lastNode.getNext()
+
+            return lastNode.getValue()
 
     def prepend(self, value):
 
@@ -41,7 +64,7 @@ class LinkedList():
         previous_node = self.firstNode
         
         while True:
-            if previous_node == None:
+            if previous_node is None:
                 raise IndexError()
             
             if index == 0:
@@ -55,13 +78,16 @@ class LinkedList():
         return len(self)
 
     def __str__ (self):
+
+        if self.firstNode is None:
+            return '[]'
         
         string = '['
         previous_node = self.firstNode
 
         while True:
             
-            if previous_node.getNext() == None:
+            if previous_node.getNext() is None:
                 string += str(previous_node)
                 break
             
@@ -87,7 +113,7 @@ class LinkedList():
             while True:
                 length += 1
 
-                if previous_node.getNext() == None:
+                if previous_node.getNext() is None:
                     break
 
                 previous_node = previous_node.getNext()
